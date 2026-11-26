@@ -9,8 +9,11 @@ for private testing with your own dumps. No ROM data is included.
 - **68000 Cave driver** (`bin/cave`): dfeveron (Dangun Feveron), feversos and the other sets in MAME's `cave.cpp`
 - **Toaplan Batsugun driver** (`bin/batsugun`): `batsugunsp` (Batsugun Special Version), `batsugun` and the other sets in MAME's `toaplan/batsugun.cpp`.
   `batsugunsp` needs the parent `batsugun` files too: either inside `batsugunsp.zip` or as a separate `batsugun.zip`.
+- **Capcom CPS2 driver** (`bin/cps2`): `mmatrix` (Mars Matrix) and its clones, the other sets in MAME's `capcom/cps2.cpp`,
+  plus the CPS1 sets in `capcom/cps1.cpp`.
+  QSound games (all of CPS2) also need MAME's `qsound.zip` (`dl-1425.bin`) in `roms/`.
 
-The scripts pick the right binary for `GAME` automatically (or set `DRIVER=cv1k` / `DRIVER=cave` / `DRIVER=batsugun`).
+The scripts pick the right binary for `GAME` automatically (or set `DRIVER=cv1k` / `DRIVER=cave` / `DRIVER=batsugun` / `DRIVER=cps2`).
 
 ## ROMs
 Put your sets in `roms/` as `<set>.zip`, `<set>.7z` or folders `roms/<set>/`.
@@ -35,6 +38,7 @@ Tokens: `U D L R` stick, `A B C Q` buttons 1-4, `K` coin, `V` service coin, `S` 
 - CV1000-B: 8 MB at 0x0C000000-0x0C7FFFFF
 - 68000 Cave (dfeveron): 64 KB at 0x100000-0x10FFFF (e.g. `BT_DUMP=100000:10000`); buttons 1-3 only
 - Toaplan Batsugun: 64 KB 68000 RAM at 0x100000-0x10FFFF (e.g. `BT_DUMP=100000:10000`); buttons 1-3 only
+- Capcom CPS2 (mmatrix): 64 KB 68000 work RAM at 0xFF0000-0xFFFFFF (e.g. `BT_DUMP=ff0000:10000`)
 
 ## Requirements / rebuild
 If a binary won't start, install the libraries in `bin/apt_packages.txt`, or rebuild from source
